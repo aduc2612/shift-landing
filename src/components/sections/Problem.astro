@@ -1,0 +1,30 @@
+---
+import { problem } from "$lib/constants";
+import { Card, CardContent, CardHeader, CardTitle } from "$lib/components/ui/card";
+---
+
+<section id="problem" class="w-full py-16 md:py-24 bg-surface-dark">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+        {problem.heading}
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground">
+        {problem.subheading}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {problem.cards.map((card) => (
+        <Card>
+          <CardHeader>
+            <CardTitle>{card.title}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground">{card.description}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

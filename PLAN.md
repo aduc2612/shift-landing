@@ -8,6 +8,8 @@ Build a pre-launch landing page for Shift AI using Astro + Shadcn Svelte. Single
 **Package Manager:** npm
 **Design:** Aesthetic black and white (matching shadcn defaults and the Shift app)
 
+MARKETING.md file is in "C:\\Shift\\.planning\\shift\\MARKETING.md"
+
 ---
 
 ## Phase 1: Project Scaffolding

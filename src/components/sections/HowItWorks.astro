@@ -1,0 +1,31 @@
+---
+import { howItWorks } from "$lib/constants";
+---
+
+<section id="how-it-works" class="w-full py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+        {howItWorks.heading}
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground">
+        {howItWorks.subheading}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      {howItWorks.steps.map((step) => (
+        <div class="text-center">
+          <div class="mx-auto w-full max-w-[200px] aspect-[9/16] rounded-2xl bg-muted/30 border border-border/30 flex items-center justify-center mb-6">
+            <span class="text-xs text-muted-foreground/50">App screenshot</span>
+          </div>
+          <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold text-sm mb-4">
+            {step.number}
+          </div>
+          <h3 class="text-xl font-semibold mb-2">{step.title}</h3>
+          <p class="text-muted-foreground">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
