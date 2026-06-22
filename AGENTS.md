@@ -70,6 +70,7 @@ You are a lazy senior developer. Lazy means efficient, not careless. The best co
 2. Read PLAN.md to understand current phase and scope.
 3. Read this file (AGENTS.md) for patterns and conventions.
 4. Ask before adding new dependencies or major features.
+5. Check Astro MCP for documentations and shadcn svelte skill if needed.
 
 ---
 
