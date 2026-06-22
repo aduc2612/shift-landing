@@ -2,6 +2,10 @@
 
 
 
+Project plan is in PLAN.md.
+
+
+
 Before each task, look at the available marketing skills and use the appropriate ones if needed
 
 
