@@ -43,32 +43,34 @@
 	}
 </script>
 
-<form onsubmit={handleSubmit} class="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-	<div class="flex-1">
-		<Input
-			type="email"
-			bind:value={email}
-			placeholder={placeholderText}
-			disabled={status === "loading"}
-			aria-invalid={status === "error"}
-			class="h-10 bg-background"
-		/>
+<form onsubmit={handleSubmit} class="flex flex-col gap-3 w-full max-w-md">
+	<div class="flex flex-col sm:flex-row gap-3">
+		<div class="flex-1">
+			<Input
+				type="email"
+				bind:value={email}
+				placeholder={placeholderText}
+				disabled={status === "loading"}
+				aria-invalid={status === "error"}
+				class="h-10 bg-background"
+			/>
+		</div>
+		<Button type="submit" disabled={status === "loading"} size="lg">
+			{#if status === "loading"}
+				Joining...
+			{:else}
+				{buttonText}
+			{/if}
+		</Button>
 	</div>
-	<Button type="submit" disabled={status === "loading"} size="lg">
-		{#if status === "loading"}
-			Joining...
-		{:else}
-			{buttonText}
-		{/if}
-	</Button>
+
+	{#if status === "success"}
+		<p class="text-sm text-muted-foreground">
+			You're on the list! We'll email you when Shift AI launches.
+		</p>
+	{/if}
+
+	{#if status === "error" && errorMessage}
+		<p class="text-sm text-destructive">{errorMessage}</p>
+	{/if}
 </form>
-
-{#if status === "success"}
-	<p class="text-sm text-muted-foreground mt-2">
-		You're on the list! We'll email you when Shift AI launches.
-	</p>
-{/if}
-
-{#if status === "error" && errorMessage}
-	<p class="text-sm text-destructive mt-2">{errorMessage}</p>
-{/if}
